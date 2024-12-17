@@ -20,7 +20,7 @@ namespace Sensore_Temperatura
         // Costruttori
         public SensoreTemperatura()
         {
-            ImpostaTemperature(0);
+            Temperatura = 0;
         }
 
         public SensoreTemperatura(double val)
@@ -34,7 +34,7 @@ namespace Sensore_Temperatura
         {
             string Messaggio = "";
 
-            if(!(val < 55.0 && val > -80.0))
+            if((val < 55.0 && val > -80.0))
             {
                 Temperatura = val;
                 Messaggio = $"Nuova temperature; {Temperatura}° C";

@@ -10,6 +10,33 @@ namespace Sensore_Temperatura
     {
         static void Main(string[] args)
         {
+            SensoreTemperatura sen = new SensoreTemperatura();
+            sen.TemperaturaAlta += ClimaAcceso;
+
+            while(true)
+            {
+                Console.WriteLine("Inserisci una nuova temperatura: ");
+                string input = Console.ReadLine();
+                if(input == "esci")
+                {
+                    break;
+                }
+
+                if(double.TryParse(input, out var val) )
+                {
+                    Console.WriteLine(sen.ImpostaTemperature(val));
+                }
+                else
+                {
+                    Console.WriteLine("Errore di inserimento");
+                }
+            }
+        }
+
+        static void ClimaAcceso(double val)
+        {
+            Console.WriteLine("Accensione Clima");
         }
     }
+
 }
